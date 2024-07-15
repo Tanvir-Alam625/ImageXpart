@@ -529,7 +529,7 @@ export const DrawingCanvas1: React.FC<DrawingCanvas1Props> = React.memo(function
                 border: '2px solid ' + `${alpha(color, 0.5)}`,
                 borderRadius: '5px',
               }}
-              placement="bottom-center"
+              placement="right"
             />
             <Button variant="outlined" aria-label={"Upload"} onClick={onImportImageClick} ><CloudUpload style={{ marginRight: '10px' }} />  Import </Button>
             <Button variant="outlined" aria-label={"Download"} onClick={onExportClick} ><CloudDownload style={{ marginRight: '10px' }} />  Export </Button>

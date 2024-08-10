@@ -28,7 +28,7 @@ const SignIn = ({ providers }: { providers: object }) => {
                 minHeight: '200px',
             }}>
             <Typography variant="h4" sx={{ marginBottom: '20px' }}>Sign In</Typography>
-            {Object.values(providers).map((provider) => (
+            {Object?.values(providers)?.map((provider) => (
                 <div key={provider.name} style={{ marginBottom: '10px' }}>
                     <Button variant="contained" onClick={() => signIn(provider.id)}>
                         Sign in with {provider.name}

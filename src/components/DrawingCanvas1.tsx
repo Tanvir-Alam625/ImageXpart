@@ -14,7 +14,7 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import { Arrow, Circle, Rectangle, Scribble } from "@/config/Canvas.Types";
 import { CanvasAction, DrawAction, PAINT_OPTIONS } from "@/config/Canvas.constant";
-import InputColor from 'react-input-color';
+// import InputColor from 'react-input-color';
 import {
   CloudUpload, CloudDownload,
   Undo, Redo,
@@ -518,7 +518,16 @@ export const DrawingCanvas1: React.FC<DrawingCanvas1Props> = React.memo(function
 
           </div>
           <div style={{ display: 'flex', justifyContent: 'end', gap: '10px' }}>
-            <InputColor
+            <input 
+            title="Pick a color"
+             style={{
+                width: '50px',
+                height: '40px',
+                padding: "10px",
+                border: '2px solid ' + `${alpha(color, 0.5)}`,
+                borderRadius: '5px',
+              }} type="color" value={color} onChange={(e)=> setColor(e.target.value)} />
+            {/* <InputColor
               initialValue={color}
               onChange={(color: { hex: string }) => setColor(color.hex)}
               title="Pick a color"
@@ -530,7 +539,7 @@ export const DrawingCanvas1: React.FC<DrawingCanvas1Props> = React.memo(function
                 borderRadius: '5px',
               }}
               placement="right"
-            />
+            /> */}
             <Button variant="outlined" aria-label={"Upload"} onClick={onImportImageClick} ><CloudUpload style={{ marginRight: '10px' }} />  Import </Button>
             <Button variant="outlined" aria-label={"Download"} onClick={onExportClick} ><CloudDownload style={{ marginRight: '10px' }} />  Export </Button>
           </div>

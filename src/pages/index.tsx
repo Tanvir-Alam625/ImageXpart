@@ -6,6 +6,7 @@ import { Button, Stack, Typography } from '@mui/material';
 import theme from '@/theme';
 import { alpha } from '@material-ui/core';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 // interface Props {
 //   session: Session;
@@ -18,7 +19,10 @@ const Home = () => {
   return (
     <Layout>
      
-       
+       <Head>
+        <title>ImageXpert</title>
+        <meta name='description' content='Home Page' />
+       </Head>
        <Stack
        sx={{
         display: 'flex',

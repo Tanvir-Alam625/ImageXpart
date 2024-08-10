@@ -1,8 +1,8 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Stack } from '@mui/material';
-import { signOut } from 'next-auth/react';
+// import { signOut } from 'next-auth/react';
 import { alpha } from '@material-ui/core';
-import { createTheme } from '@mui/material/styles';
+// import { createTheme } from '@mui/material/styles';
 
 
 import theme from '@/theme';
@@ -14,10 +14,10 @@ type Props = {
 
 
 const Layout = ({ children }: Props) => {
-    const handleLogout = async () => {
-        await signOut({ redirect: true });
-        window.location.href = '/auth/signin';
-    };
+    // const handleLogout = async () => {
+    //     await signOut({ redirect: true });
+    //     window.location.href = '/auth/signin';
+    // };
     return (
         <div>
             <AppBar position="static">
@@ -38,14 +38,14 @@ const Layout = ({ children }: Props) => {
                         }}
                         variant="h4"
                     >Image<span style={{ color: theme.palette.error.main }}>X</span>pert</Typography>
-                    <Button variant='text' sx={{
+                    {/* <Button variant='text' sx={{
                         color: 'white',
                         marginLeft: 'auto',
                         transition: 'background-color 0.3s',
                         "&:hover": {
                             backgroundColor: "rgba(255, 255, 255, 0.1)",
                         }
-                    }} onClick={handleLogout}>SignOut</Button>
+                    }} onClick={handleLogout}>SignOut</Button> */}
                 </Toolbar>
             </AppBar>
             <Stack

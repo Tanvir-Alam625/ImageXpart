@@ -7,14 +7,14 @@ import theme from '@/theme';
 import { alpha } from '@material-ui/core';
 import { useRouter } from 'next/router';
 
-interface Props {
-  session: Session;
-}
+// interface Props {
+//   session: Session;
+// }
 
-const Home = ({ session }: Props) => {
+const Home = () => {
   const router = useRouter();
-  if (!session) return null;
-  const userName = session.user?.name;
+  // if (!session) return null;
+  // const userName = session.user?.name;
   return (
     <Layout>
      
@@ -40,13 +40,13 @@ const Home = ({ session }: Props) => {
           
           
         </Typography>
-        <Typography
+        {/* <Typography
             style={{
               color: theme.palette.primary.main,
               fontWeight: 'bold'
 
             }}
-          >{userName}</Typography>
+          >{userName}</Typography> */}
         <Button
           variant='contained'
           onClick={()=>{
@@ -61,21 +61,21 @@ const Home = ({ session }: Props) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await getSession(context);
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   const session = await getSession(context);
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: '/auth/signin',
-        permanent: false,
-      },
-    };
-  }
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: '/auth/signin',
+//         permanent: false,
+//       },
+//     };
+//   }
 
-  return {
-    props: { session },
-  };
-};
+//   return {
+//     props: { session },
+//   };
+// };
 
 export default Home;

@@ -16,6 +16,7 @@ const authOptions = (req: NextApiRequest, res: NextApiResponse) => {
                 clientSecret,
             }),
         ],
+        secret: process.env.NEXTAUTH_SECRET,
         callbacks: {
             redirect: async ({ url, baseUrl }) => {
                 if (url.startsWith(baseUrl + '/api/auth/signout')) {
